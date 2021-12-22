@@ -29,14 +29,12 @@ export default function Nav({ setIsLogin }) {
     // </header>
     <nav className="nav">
       <div className="search">
-        {/* <form> */}
         <input
           type="text"
           name="search"
           className="search-field"
           placeholder="Search"
         />
-        {/* </form> */}
       </div>
       <div className="folders">
         <div className="folder">

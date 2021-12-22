@@ -60,10 +60,32 @@ export default function Home() {
       <div className="notes-container">
         {notes.map(note => (
           <div className="note-wrapper" key={note._id}>
-            {/* <h3 title="{note.title}">{note.title.substring(0, 25)}</h3> */}
-            <h3 title="{note.title}">{note.title}</h3>
-            <p>{note.content}...</p>
-            <p className="date">{format(note.date)}</p>
+            <div className="note-content">
+              {/* <h3 title="{note.title}">{note.title.substring(0, 25)}</h3> */}
+              <h3>{note.title}</h3>
+              <p>{note.content}...</p>
+              <p>
+                <span>
+                  <img src="assets/folder.png" alt="folder" />
+                </span>
+                <span>{note.title}</span>
+              </p>
+              <p className="date" id="date">
+                {format(note.date)}
+              </p>
+            </div>
+            <div className="note-tool">
+              <img
+                src="assets/bin.png"
+                alt="delete"
+                className="delete-btn"
+                onClick={() => deleteNote(note._id)}
+              />
+              <Link to={`edit/${note._id}`} className="delete-btn">
+                {' '}
+                <img src="assets/export.png" alt="edit" />
+              </Link>
+            </div>
           </div>
         ))}
 

@@ -113,7 +113,23 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  display: flex;
+  flex-direction: row;
 }
+
+.note-content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.note-tool {
+  width: 20%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .note-wrapper h3 {
   margin: 20px auto;
   width: 80%;
@@ -129,4 +145,9 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.delete-btn {
+  width: 16px;
+  margin: 20px auto;
 }
