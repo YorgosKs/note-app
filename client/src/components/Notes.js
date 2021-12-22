@@ -12,7 +12,7 @@ export default function Notes({ setIsLogin }) {
       {/* <Routes> */}
 
       <Route path="/" component={Home} exact />
-      {/* <Route path="/create" component={CreateNote} exact /> */}
+      <Route path="/create" component={CreateNote} exact />
       {/* <Route path="/edit/:id" component={EditNote} exact /> */}
 
       {/* </Routes> */}

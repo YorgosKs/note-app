@@ -58,12 +58,16 @@ export default function Home() {
     <div className="container">
       <h1 className="greeting">Hello, user!</h1>
       <div className="notes-container">
-        <div className="note-wrapper">
-          {notes.map(note => (
-            <div></div>
-          ))}
-        </div>
-        <div className="note-wrapper">
+        {notes.map(note => (
+          <div className="note-wrapper" key={note._id}>
+            {/* <h3 title="{note.title}">{note.title.substring(0, 25)}</h3> */}
+            <h3 title="{note.title}">{note.title}</h3>
+            <p>{note.content}...</p>
+            <p className="date">{format(note.date)}</p>
+          </div>
+        ))}
+
+        {/* <div className="note-wrapper">
           <p>ewfewfw</p>
         </div>
         <div className="note-wrapper">
@@ -103,7 +107,7 @@ export default function Home() {
 
         <div className="note-wrapper">
           <p>ewfewfw</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

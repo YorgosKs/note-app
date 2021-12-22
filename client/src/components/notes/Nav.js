@@ -28,14 +28,16 @@ export default function Nav({ setIsLogin }) {
     //   </ul>
     // </header>
     <nav className="nav">
-      <form>
+      <div className="search">
+        {/* <form> */}
         <input
           type="text"
           name="search"
           className="search-field"
           placeholder="Search"
         />
-      </form>
+        {/* </form> */}
+      </div>
       <div className="folders">
         <div className="folder">
           <p>Work</p>
