@@ -50,7 +50,7 @@ export default function Login({ setIsLogin }) {
   return (
     <section className="login-page">
       <div className="login create-note">
-        <h2>Login</h2>
+        <h2>Login GREAT THINGS ARE COMING</h2>
         <form onSubmit={loginSubmit}>
           <input
             type="email"
