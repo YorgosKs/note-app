@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { createEditor } from 'slate';
+import { Slate, Editable, withReact } from 'slate-react';
 
 export default function EditNote({ match }) {
   const [note, setNote] = useState({
@@ -64,42 +66,5 @@ export default function EditNote({ match }) {
     }
   };
 
-  return (
-    <div className="create-note">
-      <h2>Edit Note</h2>
-      <form onSubmit={editNote} autoComplete="off">
-        <div className="row">
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            value={note.title}
-            id="title"
-            name="title"
-            required
-            onChange={onChangeInput}
-          />
-        </div>
-
-        <div className="row">
-          <label htmlFor="content">Content</label>
-          <textarea
-            type="text"
-            value={note.content}
-            id="content"
-            name="content"
-            required
-            rows="10"
-            onChange={onChangeInput}
-          />
-        </div>
-
-        <label htmlFor="date">Date: {note.date} </label>
-        <div className="row">
-          <input type="date" id="date" name="date" onChange={onChangeInput} />
-        </div>
-
-        <button type="submit">Save</button>
-      </form>
-    </div>
-  );
+  return <div className="edit-note"></div>;
 }

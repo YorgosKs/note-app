@@ -11,6 +11,7 @@ app.use(express.json());
 // ROUTES
 const usersRoute = require('./routes/users');
 const notesRoute = require('./routes/notes');
+const foldersRoute = require('./routes/folders');
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
@@ -28,3 +29,4 @@ app.use(express.json());
 
 app.use('/api/users', usersRoute);
 app.use('/api/notes', notesRoute);
+app.use('/api/folders', foldersRoute);

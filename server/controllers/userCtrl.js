@@ -68,6 +68,14 @@ const userCtrl = {
       return res.status(500).json({ msg: err.message });
     }
   },
+  getUsername: async (req, res) => {
+    try {
+      const users = await User.findById(req.params.id);
+      res.json(users);
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
 };
 
 module.exports = userCtrl;

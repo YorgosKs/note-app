@@ -1,11 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { format } from 'timeago.js';
+import * as timeago from 'timeago.js';
 import axios from 'axios';
 
-export default function Home() {
+export default function Home({ match }) {
   const [notes, setNotes] = useState([]);
+
   const [token, setToken] = useState('');
+
+  const [users, setUsername] = useState('');
+
+  // const getUsername = async token => {
+  //   const res = await axios.get('http://localhost:8080/api/users/getUsername', {
+  //     headers: { Authorization: token },
+  //   });
+  //   setUsername(res.data);
+  // };
+
+  // useEffect(() => {
+  //   const token = localStorage.getItem('tokenStore');
+  //   setToken(token);
+  //   if (token) {
+  //     getUsername(token);
+  //   }
+  // }, []);
 
   const getNotes = async token => {
     const res = await axios.get('http://localhost:8080/api/notes/', {
@@ -56,7 +74,7 @@ export default function Home() {
     // </div>
 
     <div className="container">
-      <h1 className="greeting">Hello, user!</h1>
+      <h1 className="greeting">Hello, {users.username}!</h1>
       <div className="notes-container">
         {notes.map(note => (
           <div className="note-wrapper" key={note._id}>
@@ -68,10 +86,10 @@ export default function Home() {
                 <span>
                   <img src="assets/folder.png" alt="folder" />
                 </span>
-                <span>{note.title}</span>
+                <span>{note.folder}</span>
               </p>
               <p className="date" id="date">
-                {format(note.date)}
+                {timeago.format(note.date)}
               </p>
             </div>
             <div className="note-tool">

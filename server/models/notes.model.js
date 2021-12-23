@@ -7,6 +7,10 @@ const noteSchema = new Schema({
     type: String,
     required: true,
   },
+  folder_id: {
+    type: String,
+    required: true,
+  },
   content: {
     type: String,
     required: true,
