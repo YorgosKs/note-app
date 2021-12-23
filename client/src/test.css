@@ -8,9 +8,9 @@
 }
 
 .register-page {
-  /* position: relative;
-  left: calc(100% / 100);
-  top: -55%; */
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
 
 .login-page {
