@@ -12,6 +12,7 @@ export default function Nav({ setIsLogin }) {
 
   const [folders, getFolder] = useState([]);
   const [token, setToken] = useState('');
+  // const folder_input = document.querySelector('#folder-input');
 
   const getFolders = async token => {
     const res = await axios.get('http://localhost:8080/api/folders/', {
@@ -30,6 +31,12 @@ export default function Nav({ setIsLogin }) {
     setFolder({ ...folder, [name]: value });
   };
 
+  const hidden = () => {
+    var element = document.getElementById('folder-input');
+
+    element.classList.remove('hidden');
+  };
+
   const createFolder = async e => {
     e.preventDefault();
     try {
@@ -44,12 +51,14 @@ export default function Nav({ setIsLogin }) {
           headers: { Authorization: token },
         });
 
-        return history.push('/nav');
+        return history.push('/');
       }
     } catch (err) {
       window.location.href = '/';
     }
   };
+
+  // folder_input.addEventListener('focusout', createFolder());
 
   useEffect(() => {
     const token = localStorage.getItem('tokenStore');
@@ -78,7 +87,7 @@ export default function Nav({ setIsLogin }) {
     //     </li>
     //   </ul>
     // </header>
-    <nav className="nav">
+    <div className="nav">
       <form>
         <div className="search">
           <input
@@ -99,21 +108,30 @@ export default function Nav({ setIsLogin }) {
         <div className="folder">
           <p>Home</p>
         </div> */}
-
+        <div className="folder hidden" id="folder-input">
+          <input
+            type="text"
+            value={folder.title}
+            id="title"
+            name="title"
+            required
+            onChange={onChangeInput}
+            placeholder="New folder"
+            className="folder-input"
+            onBlur={createFolder}
+          />
+        </div>
         {folders.map(folders => (
           <div className="folder" key={folders._id}>
             <p>{folders.title}</p>
           </div>
         ))}
-        <div className="folder">
-          <input type="text" name="folder" placeholder="New folder" />
-        </div>
       </div>
 
       <div className="toolbar">
         <img src="assets/user_btn.png" alt="icon" onClick={logoutSubmit} />
-        <img src="assets/add.png" alt="icon" onClick={createFolder} />
+        <img src="assets/add.png" alt="icon" onClick={hidden} />
       </div>
-    </nav>
+    </div>
   );
 }

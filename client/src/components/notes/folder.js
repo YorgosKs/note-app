@@ -38,7 +38,7 @@ export default function CreateNote() {
   return (
     <div className="create-note">
       <h2>Create folder</h2>
-      <form onSubmit={createFolder} autoComplete="off">
+      <form onSubmit={createFolder}>
         <div className="row">
           <label htmlFor="title">Title</label>
           <input

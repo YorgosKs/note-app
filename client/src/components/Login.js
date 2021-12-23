@@ -103,58 +103,68 @@ export default function Login({ setIsLogin }) {
         </div>
       </div>
 
+      {/* REGISTER FORM */}
+
       <div className="register-page" style={style}>
-        <h2>Register</h2>
+        <div className="login-page">
+          <div className="form-container">
+            <form onSubmit={registerSubmit}>
+              <h2>Register</h2>
 
-        <form onSubmit={registerSubmit}>
-          <p>
-            <input
-              type="text"
-              name="name"
-              id="register-name"
-              placeholder="User Name"
-              required
-              value={user.name}
-              onChange={onChangeInput}
-            />
-          </p>
+              <p>
+                <input
+                  type="text"
+                  name="name"
+                  id="register-name"
+                  placeholder="User Name"
+                  required
+                  value={user.name}
+                  onChange={onChangeInput}
+                />
+              </p>
 
-          <p>
-            <input
-              type="email"
-              name="email"
-              id="register-email"
-              placeholder="Email"
-              required
-              value={user.email}
-              onChange={onChangeInput}
-            />
-          </p>
+              <p>
+                <input
+                  type="email"
+                  name="email"
+                  id="register-email"
+                  placeholder="Email"
+                  required
+                  value={user.email}
+                  onChange={onChangeInput}
+                />
+              </p>
 
-          <p>
-            <input
-              type="password"
-              name="password"
-              id="register-password"
-              placeholder="Password"
-              required
-              value={user.password}
-              autoComplete="true"
-              onChange={onChangeInput}
-            />
-          </p>
+              <p>
+                <input
+                  type="password"
+                  name="password"
+                  id="register-password"
+                  placeholder="Password"
+                  required
+                  value={user.password}
+                  autoComplete="true"
+                  onChange={onChangeInput}
+                />
+              </p>
 
-          <p>
-            <button type="submit">Register</button>
-          </p>
-          <p>
-            mas ta exeis dwsei hdh?
-            <span onClick={() => setOnLogin(false)}>MPES TWRA!</span>
-          </p>
-          <h3>{err}</h3>
-        </form>
+              <p>
+                <button type="submit">Register</button>
+              </p>
+              <p>
+                mas ta exeis dwsei hdh?
+                <span onClick={() => setOnLogin(false)}>MPES TWRA!</span>
+              </p>
+              <h3>{err}</h3>
+            </form>
+          </div>
+          <div className="login-page-photo">
+            <img src="assets/register.png" alt="login" />
+          </div>
+        </div>
       </div>
     </section>
+    //
     /*  <section className="login-page">
       <div className="login create-note">
         <h2>Login</h2>

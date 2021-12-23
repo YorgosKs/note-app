@@ -9,7 +9,7 @@ const noteSchema = new Schema({
   },
   folder_id: {
     type: String,
-    required: true,
+    // required: true,
   },
   content: {
     type: String,

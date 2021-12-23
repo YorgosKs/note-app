@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
 }
 
-nav {
+.nav {
   margin: 0;
   padding: 0;
   width: 20%;
@@ -77,6 +77,21 @@ nav {
 .search-field:focus {
   border: 3px solid #142d4c;
   background-image: url('../public/assets/search-blue.png');
+}
+
+.folder-input {
+  background-color: #142d4c;
+  color: white;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 16px;
+  margin: 16px auto;
+  width: 50%;
+}
+
+.hidden {
+  display: none;
 }
 
 .toolbar {

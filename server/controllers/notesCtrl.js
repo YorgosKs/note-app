@@ -17,7 +17,6 @@ const noteCtrl = {
         content,
         date,
         user_id: req.user.id,
-        folder_id: req.folders.id,
       });
       await newNote.save();
       res.json({ msg: 'Created a Note' });
