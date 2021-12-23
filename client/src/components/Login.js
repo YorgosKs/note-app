@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../login_stylesheet.css";
 
 export default function Login({ setIsLogin }) {
   const [user, setUser] = useState({ name: "", email: "", password: "" });
@@ -48,7 +49,77 @@ export default function Login({ setIsLogin }) {
   };
 
   return (
-    <section className="login-page">
+  <div className="login-page">
+    <h2>Login</h2>
+    <form onSubmit={loginSubmit}>
+      <p><input
+        type="email"
+        name="email"
+        id="login-email"
+        placeholder="Email"
+        required
+        value={user.email}
+        onChange={onChangeInput}/></p>
+
+    <p><input
+      type="password"
+      name="password"
+      id="login-password"
+      placeholder="Password"
+      required
+      value={user.password}
+      autoComplete="true"
+      onChange={onChangeInput}/></p>
+    <p><button type="submit">Login</button></p>
+    <p>den mas exeis dwsei akoma ta dedomena sou?
+      <span onClick={()=> setOnLogin(true)}> Pata edw alani mou</span>
+    </p>
+    <h3>{err}</h3>
+    </form>
+    <div className="register-page">
+      <h2>Register</h2>
+      <form onSubmit={registerSubmit}>
+
+        <p><input
+          type="text"
+          name="name"
+          id="register-name"
+          placeholder="User Name"
+          required
+          value={user.name}
+          onChange={onChangeInput}/></p>
+
+        <p><input
+          type="email"
+          name="email"
+          id="register-email"
+          placeholder="Email"
+          required
+          value={user.email}
+          onChange={onChangeInput}/></p>
+      
+      <p><input
+          type="password"
+          name="password"
+          id="register-password"
+          placeholder="Password"
+          required
+          value={user.password}
+          autoComplete="true"
+          onChange={onChangeInput}/></p>
+
+        <p><button type="submit">Register</button></p>
+        <p>
+          mas ta exeis dwsei hdh?
+          <span onClick={()=> setOnLogin(false)}>MPES TWRA!</span>
+        </p>
+        <h3>{err}</h3>
+        </form>
+    </div>
+  </div>
+
+  
+    /*  <section className="login-page">
       <div className="login create-note">
         <h2>Login</h2>
         <form onSubmit={loginSubmit}>
@@ -123,6 +194,6 @@ export default function Login({ setIsLogin }) {
           <h3>{err}</h3>
         </form>
       </div>
-    </section>
+    </section> */
   );
 }

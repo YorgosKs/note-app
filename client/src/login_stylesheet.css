@@ -1,0 +1,16 @@
+.login-page{
+    background-color: #ECECEC;
+    width: 70%;
+    height: 70vh;
+    margin: 0 auto;
+}
+
+h2{
+    color: rgb(30, 36, 131);
+}
+input{
+    background-color: #C4C4C4 ;
+}
+button{
+    background-color: #6D9886;
+}
