@@ -1,8 +1,29 @@
+#login-register-page{
+    position: absolute;
+    display: flex;
+}
+.login-page-photo{
+    float: right;
+}
 .login-page{
     background-color: #ECECEC;
     width: 70%;
     height: 70vh;
     margin: 0 auto;
+    z-index: 2;
+    top: 2%;
+    left: 15%;
+    position: absolute;
+}
+.register-page{
+       background-color: #ECECEC;
+    width: 70%;
+    height: 70vh;
+    margin: 0 auto; 
+    z-index: 3;
+    top: 2%;
+    left: 15%;
+    position:absolute;
 }
 
 h2{

@@ -47,9 +47,18 @@ export default function Login({ setIsLogin }) {
     visibility: onLogin ? 'visible' : 'hidden',
     opacity: onLogin ? 1 : 0,
   };
+  const style2 = {
+   visibility: onLogin ? 'hidden' : 'visible',
+   opacity: onLogin ? 0 : 1,
+  };
 
   return (
-    <div className="login-page">
+  <section className="login-register-page">
+
+    <div className="login-page" style={style2}>
+          <div className='login-page-photo'>
+      <img src="assets/login.png"></img>
+    </div>
       <h2>Login</h2>
       <form onSubmit={loginSubmit}>
         <p>
@@ -85,7 +94,9 @@ export default function Login({ setIsLogin }) {
         </p>
         <h3>{err}</h3>
       </form>
-      <div className="register-page">
+      </div>
+
+      <div className="register-page" style={style}>
         <h2>Register</h2>
         <form onSubmit={registerSubmit}>
           <p>
@@ -135,8 +146,8 @@ export default function Login({ setIsLogin }) {
           <h3>{err}</h3>
         </form>
       </div>
-    </div>
 
+</section>
     /*  <section className="login-page">
       <div className="login create-note">
         <h2>Login</h2>
