@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../login_stylesheet.css';
+// import '../login_stylesheet.css';
+import '../test.css';
 
 export default function Login({ setIsLogin }) {
   const [user, setUser] = useState({ name: '', email: '', password: '' });
@@ -48,56 +49,63 @@ export default function Login({ setIsLogin }) {
     opacity: onLogin ? 1 : 0,
   };
   const style2 = {
-   visibility: onLogin ? 'hidden' : 'visible',
-   opacity: onLogin ? 0 : 1,
+    visibility: onLogin ? 'hidden' : 'visible',
+    opacity: onLogin ? 0 : 1,
   };
 
   return (
-  <section className="login-register-page">
-
-    <div className="login-page" style={style2}>
-          <div className='login-page-photo'>
-      <img src="assets/login.png"></img>
-    </div>
-      <h2>Login</h2>
-      <form onSubmit={loginSubmit}>
-        <p>
-          <input
-            type="email"
-            name="email"
-            id="login-email"
-            placeholder="Email"
-            required
-            value={user.email}
-            onChange={onChangeInput}
-          />
-        </p>
-
-        <p>
-          <input
-            type="password"
-            name="password"
-            id="login-password"
-            placeholder="Password"
-            required
-            value={user.password}
-            autoComplete="true"
-            onChange={onChangeInput}
-          />
-        </p>
-        <p>
-          <button type="submit">Login</button>
-        </p>
-        <p>
-          den mas exeis dwsei akoma ta dedomena sou?
-          <span onClick={() => setOnLogin(true)}> Pata edw alani mou</span>
-        </p>
-        <h3>{err}</h3>
-      </form>
+    <section className="login-register-page">
+      <div className="login-page" style={style2}>
+        <div className="form-container">
+          <form onSubmit={loginSubmit}>
+            <h2>Login</h2>
+            <p>
+              <label>Email</label>
+            </p>
+            <p>
+              <input
+                type="email"
+                name="email"
+                id="login-email"
+                placeholder="Email"
+                required
+                value={user.email}
+                onChange={onChangeInput}
+              />
+            </p>
+            <p>
+              <label>Password</label>
+            </p>
+            <p>
+              <input
+                type="password"
+                name="password"
+                id="login-password"
+                placeholder="Password"
+                required
+                value={user.password}
+                autoComplete="true"
+                onChange={onChangeInput}
+              />
+            </p>
+            <p>
+              <button type="submit">Login</button>
+            </p>
+            <p>
+              den mas exeis dwsei akoma ta dedomena sou?
+              <span onClick={() => setOnLogin(true)}> Pata edw alani mou</span>
+            </p>
+            <h3>{err}</h3>
+          </form>
+        </div>
+        <div className="login-page-photo">
+          <img src="assets/login.png" alt="login" />
+        </div>
       </div>
 
       <div className="register-page" style={style}>
         <h2>Register</h2>
+
         <form onSubmit={registerSubmit}>
           <p>
             <input
@@ -146,8 +154,7 @@ export default function Login({ setIsLogin }) {
           <h3>{err}</h3>
         </form>
       </div>
-
-</section>
+    </section>
     /*  <section className="login-page">
       <div className="login create-note">
         <h2>Login</h2>

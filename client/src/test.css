@@ -1,0 +1,105 @@
+.login-register-page {
+  /* position: absolute; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto; */
+}
+.login-page {
+  width: 65%;
+  height: 70vh;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
+  /* z-index: 2;
+    top: 2%;
+    left: 15%;
+    position: absolute; */
+}
+
+.form-container {
+  width: 100%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: #ececec;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-container h2 {
+  color: black;
+}
+
+.form-container form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-container input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background-color: #c4c4c4;
+  margin: 15px auto;
+  border: 3px solid #c4c4c4;
+  transition: 0.2s;
+}
+
+.form-container input:focus {
+  border: 3px solid #6d9886;
+}
+
+.form-container p {
+  margin: 0 auto;
+}
+
+.form-container button {
+  background-color: #6d9886;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  margin: 25px auto;
+}
+.login-page-photo {
+  /* float: right; */
+  width: fit-content;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.login-page-photo img {
+  margin: 0 auto;
+  height: 70vh;
+  /* width: 100%; */
+}
+
+/* .register-page {
+  background-color: #ececec;
+  width: 70%;
+  height: 70vh;
+  margin: 0 auto;
+  z-index: 3;
+  top: 2%;
+  left: 15%;
+  position: absolute;
+} */
+
+h2 {
+  color: rgb(30, 36, 131);
+}
+input {
+  background-color: #c4c4c4;
+}
+button {
+  background-color: #6d9886;
+}
