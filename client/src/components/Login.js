@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 // import '../login_stylesheet.css';
 import '../test.css';
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 export default function Login({ setIsLogin }) {
   const [user, setUser] = useState({ name: '', email: '', password: '' });
@@ -22,15 +16,7 @@ export default function Login({ setIsLogin }) {
   const registerSubmit = async e => {
     e.preventDefault();
     try {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       const res = await axios.post('http://localhost:8080/api/users/register', {
-=======
-      const res = await axios.post('/users/register', {
->>>>>>> Stashed changes
-=======
-      const res = await axios.post('/users/register', {
->>>>>>> Stashed changes
         username: user.name,
         email: user.email,
         password: user.password,

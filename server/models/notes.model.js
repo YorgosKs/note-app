@@ -9,15 +9,8 @@ const noteSchema = new Schema({
   },
   folder_id: {
     type: String,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
     // required: true,
-=======
-    required: true,
->>>>>>> Stashed changes
-=======
-    required: true,
->>>>>>> Stashed changes
   },
   content: {
     type: String,
