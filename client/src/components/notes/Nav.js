@@ -12,7 +12,10 @@ export default function Nav({ setIsLogin }) {
 
   const [folders, getFolder] = useState([]);
   const [token, setToken] = useState('');
+<<<<<<< Updated upstream
   // const folder_input = document.querySelector('#folder-input');
+=======
+>>>>>>> Stashed changes
 
   const getFolders = async token => {
     const res = await axios.get('http://localhost:8080/api/folders/', {
@@ -31,12 +34,15 @@ export default function Nav({ setIsLogin }) {
     setFolder({ ...folder, [name]: value });
   };
 
+<<<<<<< Updated upstream
   const hidden = () => {
     var element = document.getElementById('folder-input');
 
     element.classList.remove('hidden');
   };
 
+=======
+>>>>>>> Stashed changes
   const createFolder = async e => {
     e.preventDefault();
     try {
@@ -51,15 +57,22 @@ export default function Nav({ setIsLogin }) {
           headers: { Authorization: token },
         });
 
+<<<<<<< Updated upstream
         return history.push('/');
+=======
+        return history.push('/nav');
+>>>>>>> Stashed changes
       }
     } catch (err) {
       window.location.href = '/';
     }
   };
 
+<<<<<<< Updated upstream
   // folder_input.addEventListener('focusout', createFolder());
 
+=======
+>>>>>>> Stashed changes
   useEffect(() => {
     const token = localStorage.getItem('tokenStore');
     setToken(token);
@@ -87,7 +100,11 @@ export default function Nav({ setIsLogin }) {
     //     </li>
     //   </ul>
     // </header>
+<<<<<<< Updated upstream
     <div className="nav">
+=======
+    <nav className="nav">
+>>>>>>> Stashed changes
       <form>
         <div className="search">
           <input
@@ -108,6 +125,7 @@ export default function Nav({ setIsLogin }) {
         <div className="folder">
           <p>Home</p>
         </div> */}
+<<<<<<< Updated upstream
         <div className="folder hidden" id="folder-input">
           <input
             type="text"
@@ -120,6 +138,16 @@ export default function Nav({ setIsLogin }) {
             className="folder-input"
             onBlur={createFolder}
           />
+=======
+
+        {folders.map(folders => (
+          <div className="folder" key={folders._id}>
+            <p>{folders.title}</p>
+          </div>
+        ))}
+        <div className="folder">
+          <input type="text" name="folder" placeholder="New folder" />
+>>>>>>> Stashed changes
         </div>
         {folders.map(folders => (
           <div className="folder" key={folders._id}>
@@ -130,7 +158,11 @@ export default function Nav({ setIsLogin }) {
 
       <div className="toolbar">
         <img src="assets/user_btn.png" alt="icon" onClick={logoutSubmit} />
+<<<<<<< Updated upstream
         <img src="assets/add.png" alt="icon" onClick={hidden} />
+=======
+        <img src="assets/add.png" alt="icon" onClick={createFolder} />
+>>>>>>> Stashed changes
       </div>
     </div>
   );

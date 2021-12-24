@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
 }
 
-.nav {
+nav {
   margin: 0;
   padding: 0;
   width: 20%;
@@ -78,6 +78,7 @@ body {
 .search-field:focus {
   border: 3px solid #142d4c;
   background-image: url('../public/assets/search-blue.png');
+<<<<<<< Updated upstream
 }
 
 .folder-input {
@@ -93,6 +94,8 @@ body {
 
 .hidden {
   display: none;
+=======
+>>>>>>> Stashed changes
 }
 
 .toolbar {
